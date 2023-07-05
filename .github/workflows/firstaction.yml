@@ -33,7 +33,7 @@ jobs:
         run: |
           echo Hello, $name!
           echo Actor: ${{github.actor}}
-          echo Commited by: ${{github.event.commits[0].actor.name}}
+          echo Commited by: ${{ github.event.commits[0].author.name }}
  
   dump:
     runs-on: ubuntu-latest
