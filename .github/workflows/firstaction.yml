@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       city: 'Boston'
-      weather_secrets: ${{ secrets.weather_city}}
+      weather_secrets: ${{secrets.weather_city2}}
     steps:
       - name: weather
-        run: curl -s --url https://nominatim.openstreetmap.org/search?format=json&q=$city
+        run: curl -s --url https://nominatim.openstreetmap.org/search?format=json&q=$weather_secrets
   
   build:
     env:
