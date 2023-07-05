@@ -27,11 +27,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, $name!
-          
+        run: |
+          echo Hello, $name!
+          echo Actor: ${{github.actor}}
+          echo Commited by: ${{github.event.commits[0].author.name}}
+
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+         GITHUB_CONTEXT: ${{toJson(github0}}
+         run: echo "GITHUB_CONTEXT"
+
   pull_request_only:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
