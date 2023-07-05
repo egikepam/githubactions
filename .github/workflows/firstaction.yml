@@ -17,11 +17,12 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 env:
   name: global_name
+  city: Boston
+  
 jobs:
   test_job:
     runs-on: ubuntu-latest
     env:
-      city: Boston
       weather_secrets: ${{secrets.weather_city2}}
     steps:
       - name: weather
