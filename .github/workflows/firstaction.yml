@@ -29,7 +29,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo Hello, $name!
+          echo Hello2, $name!
           echo Actor: ${{github.actor}}
           echo Commited by: ${{github.event.commits[0].author.name}}
 					
