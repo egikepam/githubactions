@@ -18,7 +18,15 @@ on:
 env:
   name: global_name
 jobs:
-  # This workflow contains a single job called "build"
+  test_job:
+    runs-on: ubuntu-latest
+    env:
+      weather_secrets: ${{ secrets.weather_city}}
+    steps:
+      - name: weather
+      - run: curl -s --url https://nominatim.openstreetmap.org/search?format=json&q=$weather_city
+
+
   build:
     env:
       name: IvanZ
