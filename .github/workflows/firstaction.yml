@@ -30,7 +30,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, $name!
+        run: |
+          echo Hello, $name!
+          echo Actor: ${{github.actor}}
+          echo Commited by: ${{github.event.commits[0].actor.name}}
  
   dump:
     runs-on: ubuntu-latest
