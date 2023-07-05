@@ -18,7 +18,6 @@ on:
 env:
   name: global_name
 jobs:
-  # This workflow contains a single job called "build"
   build:
     env:
       name: IvanZ
